@@ -1,0 +1,79 @@
+label {
+	position: absolute;
+	height: 18px;
+	font-family: Source Sans Pro;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+	
+	color: #656565;
+	
+	/* identical to box height */
+}
+
+#labelValor{
+	left: 25.78%;
+	right: 59.18%;
+	top: calc(50% - 18px/2 - 92px);
+}
+
+#labelQuantidade{
+	left: 25.78%;
+	right: 61.52%;
+	top: calc(50% - 18px/2 - 5px);
+}
+
+#labelPercentual{
+	left: 25.78%;
+	right: 56.74%;
+	top: calc(50% - 18px/2 + 99px);
+
+}
+
+input:focus { 
+    outline: none !important;
+    border-color: #5D9CEC;
+    box-shadow: 0 0 1px #5D9CEC !important;
+}
+
+input{
+	position: absolute;
+	left: 25.78%;
+	right: 49.71%;
+	background: #FFFFFF;
+	
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+#valor{
+	top: 39%;
+	bottom: 55.71%;
+}
+
+#quantidade {
+	top: 51.43%;
+	bottom: 43.29%;
+}
+
+#percentual{
+	top: 66.29%;
+	bottom: 28.43%;
+}
+
+#parcelas{
+	position: absolute;
+	height: 14px;
+	left: 25.78%;
+	right: 63.48%;
+	top: calc(50% - 14px/2 + 57px);
+	font-family: Source Sans Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 14px;
+	color: #CECECE;
+	
+	/* identical to box height */
+}
