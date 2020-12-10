@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.containerForm {
+	position: absolute;
+	left: 20.31%;
+	right: 20.31%;
+	top: 22.29%;
+	bottom: 22.14%;
+
+	background: #FFFFFF;
+	border: 1px solid #D1DCE3;
+	box-sizing: border-box;
+	border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+	position: absolute;
+	height: 30px;
+	left: 25.78%;
+	right: 49.8%;
+	top: calc(50% - 30px/2 - 138px);
+
+	font-family: Source Sans Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 30px;
+
+	color: #656565;
+
 }
+
+label {
+	position: absolute;
+	height: 18px;
+	font-family: Source Sans Pro;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+	
+	color: #656565;
+	
+	/* identical to box height */
+}
+
+.labelValor{
+	left: 25.78%;
+	right: 59.18%;
+	top: calc(50% - 18px/2 - 92px);
+}
+
+.labelParcelas{
+	left: 25.78%;
+	right: 61.52%;
+	top: calc(50% - 18px/2 - 5px);
+}
+
+.labelPercentual{
+	left: 25.78%;
+	right: 56.74%;
+	top: calc(50% - 18px/2 + 99px);
+
+}
+
+input:focus { 
+    outline: none !important;
+    border-color: #5D9CEC;
+    box-shadow: 0 0 1px #5D9CEC !important;
+}
+
+input{
+	position: absolute;
+	left: 25.78%;
+	right: 49.71%;
+	background: #FFFFFF;
+	
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.valor{
+	top: 39%;
+	bottom: 55.71%;
+}
+
+.parcelas {
+	top: 51.43%;
+	bottom: 43.29%;
+}
+
+.percentual{
+	top: 66.29%;
+	bottom: 28.43%;
+}
+
+.parcelasObs{
+	position: absolute;
+	height: 14px;
+	left: 25.78%;
+	right: 63.48%;
+	top: calc(50% - 14px/2 + 57px);
+	font-family: Source Sans Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 14px;
+	color: #CECECE;
+	
+	/* identical to box height */
+}
+
+/*Estilo do resultado*/
+
+.containerResult{
+	position: absolute;
+	left: 57.13%;
+	right: 20.31%;
+	top: 22.29%;
+	bottom: 22.14%;
+	background: rgba(209, 220, 227, 0.18);
+	border-radius: 4px;
+}
+
+.resultadoTitulo{
+	position: absolute;
+	height: 20px;
+	left: 60.55%;
+	right: 28.03%;
+	top: calc(50% - 20px/2 - 101px);
+	font-family: Source Sans Pro;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 20px;
+	text-transform: uppercase;
+	color: #3D75BB !important;
+}
+
+hr {
+	position: absolute;
+	left: 60.55%;
+	right: 23.73%;
+	top: 37.57%;
+	bottom: 62.14%;
+
+	mix-blend-mode: normal;
+	opacity: 0.3;
+	border: 1px solid #5D9CEC;
+}
+
+.resultText{
+	position: absolute;
+	height: 184px;
+	left: 60.55%;
+	right: 27.05%;
+	top: calc(50% - 184px/2 + 20px);
+	font-family: Source Sans Pro;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 46px;
+
+	color: #5D9CEC;
+	
+		/* or 287% */
+}
+
+
