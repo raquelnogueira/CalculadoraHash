@@ -19,6 +19,7 @@ function App() {
         </div>
         <div className="containerResult">
         <label name="resultadoTitulo" id="resultadoTitulo" className="resultadoTitulo">VOCÊ RECEBERÁ:</label>
+        <hr></hr>
           <div className="resultText">
             <P pContent="Amanhã: " pValor="R$0,00"></P>
             <P pContent="Em 15 dias: " pValor="R$0,00"></P>
