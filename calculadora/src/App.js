@@ -1,9 +1,28 @@
 import './App.css';
+import React, { useEffect, useState } from 'react';
 import { Input, Label } from './components/form';
 import { P } from './components/result';
+import withLoading from './components/loading';
 
 
 function App() {
+  const Loading = withLoading(P);
+
+  const [appState, setAppState] = useState({
+    loading: false,
+    repos: null,
+  });
+
+  useEffect(() => {
+    setAppState({ loading: true });
+    const apiUrl = `https://hash-front-test.herokuapp.com/`;
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((repos) => {
+        setAppState({ loading: false, repos: repos });
+      });
+  }, [setAppState]);
+
   return (
     <div className="App">
       <div className="container">
@@ -18,14 +37,20 @@ function App() {
           <Input type="text" name="percentual" id="percentual" className="percentual"></Input>
         </div>
         <div className="containerResult">
-        <label name="resultadoTitulo" id="resultadoTitulo" className="resultadoTitulo">VOCÊ RECEBERÁ:</label>
-        <hr></hr>
-          <div className="resultText">
+          <label name="resultadoTitulo" id="resultadoTitulo" className="resultadoTitulo">VOCÊ RECEBERÁ:</label>
+          <hr></hr>
+
+          <div className='repo-container'>
+            <Loading isLoading={appState.loading} repos={appState.repos} />
+          </div>
+
+
+          {/* <div className="resultText">
             <P pContent="Amanhã: " pValor="R$0,00"></P>
             <P pContent="Em 15 dias: " pValor="R$0,00"></P>
             <P pContent="Em 30 dias: " pValor="R$0,00"></P>
             <P pContent="Em 90 dias: " pValor="R$0,00"></P>
-          </div>
+          </div> */}
 
         </div>
       </div>
