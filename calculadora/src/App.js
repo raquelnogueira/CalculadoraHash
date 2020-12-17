@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Input, Label } from './components/form';
 import { P } from './components/result';
 import withLoading from './components/loading';
@@ -7,6 +8,12 @@ import withLoading from './components/loading';
 
 function App() {
   const Loading = withLoading(P);
+  var obj = {
+    amount: 0,
+    installments: 0,
+    mdr: 0
+    // days: Array<number> = {}
+  };
 
   const [appState, setAppState] = useState({
     loading: false,
@@ -16,11 +23,16 @@ function App() {
   useEffect(() => {
     setAppState({ loading: true });
     const apiUrl = `https://hash-front-test.herokuapp.com/`;
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((repos) => {
-        setAppState({ loading: false, repos: repos });
-      });
+    axios.post(apiUrl, obj).then((repos) => {
+      const allRepos = repos.data;
+      setAppState({ loading: false, repos: allRepos });
+    });
+
+    // const apiUrl = `https://api.github.com/users/hacktivist123/repos`;
+    // axios.get(apiUrl).then((repos) => {
+    //   const allRepos = repos.data;
+    //   setAppState({ loading: false, repos: allRepos });
+    // });
   }, [setAppState]);
 
   return (
@@ -45,7 +57,7 @@ function App() {
           </div>
 
 
-          {/* <div className="resultText">
+           {/* <div className="resultText">
             <P pContent="Amanhã: " pValor="R$0,00"></P>
             <P pContent="Em 15 dias: " pValor="R$0,00"></P>
             <P pContent="Em 30 dias: " pValor="R$0,00"></P>

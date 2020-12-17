@@ -1,27 +1,34 @@
 import React from 'react';
 
 export const P = props => {
-    return(
-    <p>{props.pContent}<strong>{props.pValor}</strong></p>
-    )
+    // const { repos } = props;
+    // if (!repos || repos.length === 0) return <p>No repos, sorry</p>;
+    // return (
+
+    //     <div>
+    //         <h2 className='head'>Resultados</h2>
+    //         {repos.map((respo) => {
+    //             // return (
+    //                 <p>{respo.id}<strong>{respo.name}</strong></p>
+    //             // )
+                    
+    //         })}
+    //     </div>
+    // )
+
+    const { repos } = props;
+    if (!repos || repos.length === 0) return <p>Sem um resultado</p>;
+    return (
+      <ul>
+        <h2 className='list-head'>VOCÊ RECEBERÁ</h2>
+        {repos.map((repo) => {
+          return (
+            <li key={repo.id} className='list'>
+              <p>{repo.id}<strong>{repo.name}</strong></p>
+            </li>
+          );
+        })}
+      </ul>
+    );
+
 }
-
-
-// class Result extends React.Component {
-//     render() {
-//         return (
-//           <div className="result">
-//               <div id="resultado" name="resultado">
-// 			<label name="resultadoTitulo" id="resultadoTitulo">VOCÊ RECEBERÁ:</label>
-// 			<hr></hr>
-// 				<div id="resultadoTexto" name="resultadoTexto">
-// 					<p>Amanhã:</p>
-// 					<p>Em 15 dias: <strong>R$0,00</strong></p>
-// 					<p>Em 30 dias: <strong>R$0,00</strong></p>
-// 					<p>Em 90 dias: <strong>R$0,00</strong></p>
-// 				</div>
-// 			</div>
-//           </div>
-//         );
-//       }
-// }
