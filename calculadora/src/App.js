@@ -8,31 +8,35 @@ import withLoading from './components/loading';
 
 function App() {
   const Loading = withLoading(P);
-  var obj = {
-    amount: 0,
-    installments: 0,
-    mdr: 0
-    // days: Array<number> = {}
-  };
 
   const [appState, setAppState] = useState({
     loading: false,
-    repos: null,
+    dataResposta: null,
+    status: null
   });
 
   useEffect(() => {
     setAppState({ loading: true });
-    const apiUrl = `https://hash-front-test.herokuapp.com/`;
-    axios.post(apiUrl, obj).then((repos) => {
-      const allRepos = repos.data;
-      setAppState({ loading: false, repos: allRepos });
-    });
+    // const apiUrl = `https://hash-front-test.herokuapp.com/`;
+    const apiUrl = `https://hash-front-test.herokuapp.com/?timeout`;
+    // var obj = {
+    //   amount: document.getElementById("valor"),
+    //   installments: document.getElementById("parcelas"),
+    //   mdr: document.getElementById("percentual")
+    // };
+    var obj = {
+      amount: 0,
+      installments: 0,
+      mdr: 0
+    };
+    // if(){
 
-    // const apiUrl = `https://api.github.com/users/hacktivist123/repos`;
-    // axios.get(apiUrl).then((repos) => {
-    //   const allRepos = repos.data;
-    //   setAppState({ loading: false, repos: allRepos });
-    // });
+    // }
+    axios.post(apiUrl, obj).then((respos) => {
+      const resposta = respos.data;
+      const status = respos.status;
+      setAppState({ loading: false, dataResposta: resposta, status: status});
+    });
   }, [setAppState]);
 
   return (
@@ -40,30 +44,16 @@ function App() {
       <div className="container">
         <div className="containerForm">
           <h1>Simule sua Antecipação</h1>
-          <Label for="valor" name="labelValor" id="labelValor" className="labelValor" labelContent="Informe o calor da venda"></Label>
-          <Input type="text" name="valor" id="valor" className="valor"></Input>
+          <Label for="valor" name="labelValor" id="labelValor" className="labelValor" labelContent="Informe o valor da venda"></Label>
+          <Input type="number" name="valor" id="valor" className="valor"></Input>
           <Label for="parcelas" name="labelParcelas" id="labelParcelas" className="labelParcelas" labelContent="Em quantas parcelas"></Label>
-          <Input type="text" name="parcelas" id="parcelas" className="parcelas"></Input>
+          <Input type="number" name="parcelas" id="parcelas" className="parcelas"></Input>
           <p id="parcelasObs" className="parcelasObs">Máximo de 12 parcelas</p>
           <Label for="labelPercentual" name="labelPercentual" id="labelPercentual" className="labelPercentual" labelContent="Informe o percentual de MDR"></Label>
-          <Input type="text" name="percentual" id="percentual" className="percentual"></Input>
+          <Input type="number" name="percentual" id="percentual" className="percentual"></Input>
         </div>
         <div className="containerResult">
-          <label name="resultadoTitulo" id="resultadoTitulo" className="resultadoTitulo">VOCÊ RECEBERÁ:</label>
-          <hr></hr>
-
-          <div className='repo-container'>
-            <Loading isLoading={appState.loading} repos={appState.repos} />
-          </div>
-
-
-           {/* <div className="resultText">
-            <P pContent="Amanhã: " pValor="R$0,00"></P>
-            <P pContent="Em 15 dias: " pValor="R$0,00"></P>
-            <P pContent="Em 30 dias: " pValor="R$0,00"></P>
-            <P pContent="Em 90 dias: " pValor="R$0,00"></P>
-          </div> */}
-
+          <Loading isLoading={appState.loading} respos={appState.dataResposta} />
         </div>
       </div>
     </div>
