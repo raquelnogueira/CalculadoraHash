@@ -3,7 +3,7 @@ import React from 'react';
 export const P = props => {
 
     const { respos } = props;
-    if (!respos || respos === null || respos === undefined) return <p>Sem um resultado</p>;
+    // if (!respos || respos === null || respos === undefined) return <p>Sem um resultado</p>;
     return (
         <div>
             <label name="resultadoTitulo" id="resultadoTitulo" className="resultadoTitulo">VOCÊ RECEBERÁ:</label>

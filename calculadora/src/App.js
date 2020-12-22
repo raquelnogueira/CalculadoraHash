@@ -19,24 +19,32 @@ function App() {
     setAppState({ loading: true });
     // const apiUrl = `https://hash-front-test.herokuapp.com/`;
     const apiUrl = `https://hash-front-test.herokuapp.com/?timeout`;
-    // var obj = {
-    //   amount: document.getElementById("valor"),
-    //   installments: document.getElementById("parcelas"),
-    //   mdr: document.getElementById("percentual")
-    // };
+    const config = {
+      headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+      }
+  }
+   
     var obj = {
       amount: 0,
       installments: 0,
       mdr: 0
     };
-    // if(){
-
-    // }
-    axios.post(apiUrl, obj).then((respos) => {
+    const data = JSON.stringify(obj)
+   
+    axios.post(apiUrl, data, config)
+    .then((respos) => {
       const resposta = respos.data;
       const status = respos.status;
-      setAppState({ loading: false, dataResposta: resposta, status: status});
+      setAppState({ loading: false, status: status, dataResposta: resposta});
+    })
+    .catch((err)=>{
+      const error = err.response;
+      setAppState({ loading: false, status: error.status, dataResposta: null});
+      console.log(error.status);
     });
+
   }, [setAppState]);
 
   return (
