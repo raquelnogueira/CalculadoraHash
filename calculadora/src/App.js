@@ -11,7 +11,7 @@ function App() {
 
   const [appState, setAppState] = useState({
     loading: false,
-    dataResposta: null,
+    dataResponse: null,
     status: null
   });
 
@@ -34,14 +34,14 @@ function App() {
     const data = JSON.stringify(obj)
    
     axios.post(apiUrl, data, config)
-    .then((respos) => {
-      const resposta = respos.data;
-      const status = respos.status;
-      setAppState({ loading: false, status: status, dataResposta: resposta});
+    .then((res) => {
+      const response = res.data;
+      const status = res.status;
+      setAppState({ loading: false, status: status, dataResponse: response});
     })
     .catch((err)=>{
       const error = err.response;
-      setAppState({ loading: false, status: error.status, dataResposta: null});
+      setAppState({ loading: false, status: error.status, dataResponse: null});
       console.log(error.status);
     });
 
