@@ -23,15 +23,15 @@ function App() {
 
   const handleChange = event => {
     if (event.target.className === 'valor') {
+      event.target.value = event.target.value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
       setPayload((prevState) => ({
         ...prevState,
         amount: event.target.value
       }));
     } else if (event.target.className === 'parcelas') {
       const val = event.target.value;
-      const max = 12;
+      const max = 120;
       const newVal = val < max ? val : max;
-      // document.getElementById('parcelas').value = newVal
       event.target.value = newVal;
       setPayload((prevState) => ({
         ...prevState,
@@ -70,7 +70,11 @@ function App() {
       })
       .catch((err) => {
         const error = err.response;
-        console.log(error);
+        setAppState({
+          loading: false,
+          status: error.status,
+          dataResponse: error.data
+        });
       });
 
   }, [setAppState, payload]);

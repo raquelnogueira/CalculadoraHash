@@ -12,9 +12,9 @@ export const Result = props => {
             <div className="resultText">
                 {Object.keys(res).map((index) => {
                     if(index === '1'){
-                        return( <p key={index}>Amanhã:<strong>{res[index]}</strong></p> )
+                        return( <p key={index}>Amanhã:<strong>{res[index].toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</strong></p> )
                     }else{
-                        return( <p key={index}>Em {index} dias:<strong>{res[index]}</strong></p> )
+                        return( <p key={index}>Em {index} dias:<strong>{res[index].toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</strong></p> )
                     }
                 })}
               

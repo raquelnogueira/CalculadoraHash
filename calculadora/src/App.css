@@ -3,14 +3,13 @@
 }
 
 .containerForm {
-  /* max-width: 608px;
-  max-height: 389px; */
-  position: absolute;
+	position: absolute;
+	width: 608px;
+	height: 389px;
 	left: 20.31%;
 	right: 20.31%;
 	top: 22.29%;
 	bottom: 22.14%;
-
 	background: #FFFFFF;
 	border: 1px solid #D1DCE3;
 	box-sizing: border-box;
@@ -18,11 +17,9 @@
 }
 
 h1 {
-  position: absolute;
 	height: 30px;
-	left: 25.78%;
-  right: 49.8%;
-  top: calc(50% - 30px/2 - 138px);
+	margin-left: 10.78%;
+	margin-top: calc(30% - 30px/2 - 138px);
 	font-family: Source Sans Pro;
 	font-style: normal;
 	font-weight: bold;
@@ -34,8 +31,8 @@ h1 {
 }
 
 label {
-  position: absolute;
-  left: 25.78%;
+	position: absolute;
+	margin-left: 10.78%;
 	height: 18px;
 	font-family: Source Sans Pro;
 	font-style: normal;
@@ -49,18 +46,15 @@ label {
 }
 
 .labelValor{
-	right: 59.18%;
-  top: calc(50% - 18px/2 - 92px);
+	margin-top: calc(18% - 18px/2 - 92px);
 }
 
 .labelParcelas{
-	right: 61.52%;
-  top: calc(50% - 18px/2 - 5px);
+	margin-top: calc(18% - 18px/2 - 5px);
 }
 
 .labelPercentual{
-	right: 56.74%;
-  top: calc(50% - 18px/2 + 99px);
+	margin-top: calc(18% - 18px/2 + 99px);
 
 }
 
@@ -71,36 +65,33 @@ input:focus {
 }
 
 input{
-  position: absolute; 
-	left: 25.78%;
-  right: 49.71%;
+	position: absolute;
+	margin-left: 10.78%;
+	height: 37px;
+	width: 251px;
 	background: #FFFFFF;
-  border: 1px solid #DDE6E9;
-  box-sizing: border-box;
-  border-radius: 4px;
+ 	border: 1px solid #DDE6E9;
+  	box-sizing: border-box;
+  	border-radius: 4px;
 }
 
 .valor{
-	top: 39%;
-	bottom: 55.71%;
+	margin-top: 5%;
 }
 
 .parcelas {
-	top: 51.43%;
-	bottom: 43.29%;
+	margin-top: 19.5%;
 }
 
 .percentual{
-	top: 66.29%;
-	bottom: 28.43%;
+	margin-top: 36.5%;
 }
 
 .parcelasObs{
-  position: absolute;
+	position: absolute;
 	height: 14px;
-	left: 25.78%;
-	right: 63.48%;
-	top: calc(50% - 14px/2 + 57px);
+	margin-left: 11.78%;
+	margin-top: calc(18% - 14px/2 + 57px);
 	font-family: Source Sans Pro;
 	font-style: normal;
 	font-weight: bold;
@@ -114,8 +105,10 @@ input{
 /*Estilo do resultado*/
 
 .containerResult{
-  position: absolute;
-	left: 57.13%;
+	position: absolute;
+	width: 231px;
+	height: 389px;
+	left: 48.5%;
 	right: 20.31%;
 	top: 22.29%;
 	bottom: 22.14%;
@@ -125,9 +118,8 @@ input{
 
 .resultadoTitulo{
 	height: 20px;
-	left: 60.55%;
-	right: 28.03%;
-  top: calc(50% - 20px/2 - 101px);
+	margin-left: 15.55%;
+	margin-top: calc(35% - 20px/2 - 101px);
 	font-family: Source Sans Pro;
 	font-style: italic;
 	font-weight: bold;
@@ -138,10 +130,9 @@ input{
 }
 
 hr {
-	left: 60.55%;
-	right: 23.73%;
-	top: 37.57%;
-	bottom: 62.14%;
+	margin-left: 15.55%;
+	margin-right: 24.73%;
+	margin-top: calc(100% - 20px/2 - 101px);
 	mix-blend-mode: normal;
 	opacity: 0.3;
 	border: 0.1px solid #5D9CEC;
@@ -149,14 +140,13 @@ hr {
 
 .resultText{
 	height: 184px;
-	left: 60.55%;
-	right: 27.05%;
-	top: calc(50% - 184px/2 + 20px);
+	margin-left: 15.55%;
+	margin-top: calc(35% - 184px/2 + 20px);
 	font-family: Source Sans Pro;
 	font-style: italic;
 	font-weight: normal;
 	font-size: 16px;
-	line-height: 46px;
+	line-height: 36px;
 
 	color: #5D9CEC;
 	
