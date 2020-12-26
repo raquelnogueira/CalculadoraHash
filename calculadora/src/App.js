@@ -95,7 +95,6 @@ function App() {
         <div className="containerResult">
           <Loading isLoading={appState.loading} status={appState.status} dataResponse={appState.dataResponse} />
         </div>
-
       </div>
     </div>
   );

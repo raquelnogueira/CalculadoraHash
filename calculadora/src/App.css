@@ -119,7 +119,7 @@ input{
 .resultadoTitulo{
 	height: 20px;
 	margin-left: 15.55%;
-	margin-top: calc(35% - 20px/2 - 101px);
+	margin-top: calc(37% - 20px/2 - 101px);
 	font-family: Source Sans Pro;
 	font-style: italic;
 	font-weight: bold;
@@ -132,7 +132,7 @@ input{
 hr {
 	margin-left: 15.55%;
 	margin-right: 24.73%;
-	margin-top: calc(100% - 20px/2 - 101px);
+	margin-top: calc(93% - 20px/2 - 101px);
 	mix-blend-mode: normal;
 	opacity: 0.3;
 	border: 0.1px solid #5D9CEC;
