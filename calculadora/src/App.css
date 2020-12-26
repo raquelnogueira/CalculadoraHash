@@ -71,7 +71,7 @@ input:focus {
 }
 
 input{
-  position: absolute;
+  position: absolute; 
 	left: 25.78%;
   right: 49.71%;
 	background: #FFFFFF;

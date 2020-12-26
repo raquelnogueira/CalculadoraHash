@@ -1,18 +1,23 @@
 import React from 'react';
 
-export const P = props => {
+export const Result = props => {
 
-    const { res } = props;
-    // if (!res || res === null || respos === undefined) return <p>Sem um resultado</p>;
+    const res = props.dataResponse;
+
+    if (!res || res === null || res === undefined) return <p>Sem um resultado</p>;
     return (
         <div>
             <label name="resultadoTitulo" id="resultadoTitulo" className="resultadoTitulo">VOCÊ RECEBERÁ:</label>
             <hr></hr>
             <div className="resultText">
-                <p>Amanhã:<strong>{res['1']}</strong></p>
-                <p>Em 15 dias:<strong>{res['15']}</strong></p>
-                <p>Em 30 dias:<strong>{res['30']}</strong></p>
-                <p>Em 90 dias:<strong>{res['90']}</strong></p>
+                {Object.keys(res).map((index) => {
+                    if(index === '1'){
+                        return( <p key={index}>Amanhã:<strong>{res[index]}</strong></p> )
+                    }else{
+                        return( <p key={index}>Em {index} dias:<strong>{res[index]}</strong></p> )
+                    }
+                })}
+              
             </div>
         </div>
     );

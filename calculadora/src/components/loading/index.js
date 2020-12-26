@@ -1,9 +1,5 @@
-import React from 'react';
-
 function WithLoading(Component) {
-
-    return function WithLoading({ isLoading, status, ...props }) {
-        console.log(status);
+    return function WithLoading({ isLoading, status, dataResponse }) {
         if (!isLoading) {
             switch (status) {
                 case 408:
@@ -11,8 +7,10 @@ function WithLoading(Component) {
                         <p style={{ textAlign: 'center', fontSize: '30px' }}>
                             O tempo de carregamento excedeu o limite :(.
                         </p>);
+
+                //TODO: Outros tratamentos
                 default:
-                    return <Component {...props} />;
+                    return <Component dataResponse={dataResponse} />;
             }
 
         }
