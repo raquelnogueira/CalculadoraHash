@@ -108,10 +108,8 @@ input{
 	position: absolute;
 	width: 231px;
 	height: 389px;
-	left: 48.5%;
-	right: 20.31%;
-	top: 22.29%;
-	bottom: 22.14%;
+	left: 62%;
+	top: 0px;
 	background: rgba(209, 220, 227, 0.18);
 	border-radius: 4px;
 }
@@ -121,9 +119,8 @@ input{
 	margin-left: 15.55%;
 	margin-top: calc(37% - 20px/2 - 101px);
 	font-family: Source Sans Pro;
-	font-style: italic;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 20px;
 	text-transform: uppercase;
 	color: #3D75BB !important;
@@ -131,7 +128,7 @@ input{
 
 hr {
 	margin-left: 15.55%;
-	margin-right: 24.73%;
+	margin-right: 15.55%;
 	margin-top: calc(93% - 20px/2 - 101px);
 	mix-blend-mode: normal;
 	opacity: 0.3;
@@ -143,7 +140,6 @@ hr {
 	margin-left: 15.55%;
 	margin-top: calc(35% - 184px/2 + 20px);
 	font-family: Source Sans Pro;
-	font-style: italic;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 36px;
