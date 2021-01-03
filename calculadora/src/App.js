@@ -73,11 +73,12 @@ function App() {
       }
     }
 
-    const data = JSON.stringify(payload);
-
     
-    console.log(payload);
     if (payload.amount.length > 0 && payload.installments.length > 0 && payload.mdr.length > 0) {
+      payload.amount = payload.amount.replace(/[^\d]/g, '');
+      const data = JSON.stringify(payload);
+      console.log(payload);
+
       axios.post(apiUrl, data, config)
         .then((res) => {
           const response = res.data;
@@ -121,16 +122,8 @@ function App() {
         <div className="containerForm">
           <h1>Simule sua Antecipação</h1>
           <Label for="valor" name="labelValor" id="labelValor" className="labelValor" labelContent="Informe o valor da venda"></Label>
-          <CurrencyInputMask name="valor" id="valor" className="valor" isNumericString='true' displayType='number' value={payload.amount}
-           onChange={(values) => {
-            const {formattedValue, value} = values;
-            // formattedValue = $2,223
-            // value ie, 2223
-            console.log(value);
-            console.log(formattedValue);
-            // this.setState({profit: formattedValue})
-          }}/>
-           
+          <CurrencyInputMask name="valor" id="valor" className="valor" value={payload.amount}onChange={handleChange} 
+           />
 
           <Input type="number" name="parcelas" id="parcelas" className="parcelas" max={12} onChange={handleChange}></Input>
 

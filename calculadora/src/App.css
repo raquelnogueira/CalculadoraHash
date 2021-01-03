@@ -4,8 +4,8 @@
 
 .containerForm {
 	position: absolute;
-	width: 608px;
-	height: 389px;
+	max-width: 608px;
+	max-height: 389px;
 	left: 20.31%;
 	right: 20.31%;
 	top: 22.29%;
@@ -106,8 +106,8 @@ input{
 
 .containerResult{
 	position: absolute;
-	width: 231px;
-	height: 389px;
+	width: 38%;
+	height: 100%;
 	left: 62%;
 	top: 0px;
 	background: rgba(209, 220, 227, 0.18);

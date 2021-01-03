@@ -15,6 +15,6 @@ export const Input = props => {
 
 export const CurrencyInputMask = props => {
     return (
-        <CurrencyInput decimalSeparator="," isNumericString={props.isNumericString} displayType={props.displayType} thousandSeparator="." prefix="R$" name={props.name} id={props.id} className={props.className} onChange={props.onChange} value={props.value} required></CurrencyInput>
+        <CurrencyInput decimalSeparator="," thousandSeparator="." prefix="R$" name={props.name} id={props.id} className={props.className} onChange={props.onChange} value={props.value} required></CurrencyInput>
     )
 }
