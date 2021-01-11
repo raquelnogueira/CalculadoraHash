@@ -3,7 +3,7 @@ import CurrencyInput from 'react-currency-input';
 
 export const Label = props => {
     return (
-        <label for={props.valor} name={props.name} id={props.id} className={props.className}>{props.labelContent}</label>
+        <label htmlFor={props.valor} name={props.name} id={props.id} className={props.className}>{props.labelContent}</label>
     )
 }
 
