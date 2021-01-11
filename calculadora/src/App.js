@@ -66,6 +66,9 @@ function App() {
     setAppState({ loading: true });
     const apiUrl = `https://hash-front-test.herokuapp.com/`;
     //const apiUrl = `https://hash-front-test.herokuapp.com/?timeout`;
+    //const apiUrl = `https://hash-front-test.herokuapp.com/?internalError`;
+    //const apiUrl = `https://hash-front-test.herokuapp.com/?delay=tempoEmMilissegundos`;
+
     const config = {
       headers: {
         Accept: "application/json",
